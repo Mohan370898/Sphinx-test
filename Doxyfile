@@ -1,6 +1,6 @@
 # 基本
 PROJECT_NAME           = "Fortran Coulomb Force (Doxygen Demo)"
-OUTPUT_DIRECTORY       = build/doxygen
+OUTPUT_DIRECTORY       = source/_doxygen
 GENERATE_HTML          = NO
 GENERATE_LATEX         = NO
 GENERATE_XML           = YES
