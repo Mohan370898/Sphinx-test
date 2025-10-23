@@ -15,6 +15,9 @@ author = 'Zhe Liu'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
+HERE = os.path.dirname(__file__)
+subprocess.run(["doxygen", os.path.join(HERE, "Doxyfile")], check=True)
+
 extensions = [
     "sphinx_rtd_theme",
     "breathe",
