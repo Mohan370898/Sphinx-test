@@ -4,7 +4,7 @@ build:
     # python: "mambaforge-latest"
     # python: "3.11"
     python: "3.11"
-  apt-packages:
+  apt_packages:
     - doxygen
     - graphviz
 
