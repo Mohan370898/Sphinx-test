@@ -1,0 +1,13 @@
+build:
+  os: ubuntu-24.04
+  tools:
+    # python: "mambaforge-latest"
+    # python: "3.11"
+    python: "3.11"
+
+sphinx:
+  configuration: source/conf.py
+
+python:
+  install:
+  - requirements: requirements.txt
