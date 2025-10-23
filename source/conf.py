@@ -6,6 +6,8 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
+import os,subprocess
+
 project = 'Sphinx Test'
 copyright = '2025, Zhe Liu'
 author = 'Zhe Liu'
@@ -13,10 +15,21 @@ author = 'Zhe Liu'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ["sphinx_rtd_theme"]
+extensions = [
+    "sphinx_rtd_theme",
+    "breathe",
+    "myst_parser",
+    "sphinxcontrib.katex",
+    "sphinx.ext.graphviz"
+    ]
+
+breathe_projects = {"Sphinx test": os.path.join("../build/doxygen", "xml")}
+breathe_default_project = "Sphinx test"
 
 templates_path = ['_templates']
 exclude_patterns = ["sphinx_rtd_theme"]
+
+ketex_prerender = True
 
 
 
@@ -25,3 +38,5 @@ exclude_patterns = ["sphinx_rtd_theme"]
 
 html_theme = "sphinx_rtd_theme"
 html_static_path = ['_static']
+
+breathe_default_members = ()

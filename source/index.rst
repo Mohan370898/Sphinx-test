@@ -12,10 +12,26 @@ Sphinx 演示
 
 .. warning::
    这是一个警告！
-
-.. code-block:: bash
-   $ # 这是一个shell
    
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
+
+physics.f90 说明
+----------
+
+.. doxygenfile:: physics.f90
+   :project: Sphinx test
+   :sections: briefdescription detaileddescription program
+
+coulomb_force function说明
+~~~~~~~~~~~~~~~~~~
+
+.. doxygenfunction:: coulomb_force
+   :project: Sphinx test
+
+physics namespace 说明
+~~~~~~~~~~~~~~~~~~~~
+.. doxygennamespace:: physics
+   :project: Sphinx test
+   :members:

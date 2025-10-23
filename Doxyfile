@@ -1,0 +1,28 @@
+# 基本
+PROJECT_NAME           = "Fortran Coulomb Force (Doxygen Demo)"
+OUTPUT_DIRECTORY       = build/doxygen
+GENERATE_HTML          = NO
+GENERATE_LATEX         = NO
+GENERATE_XML           = YES
+XML_OUTPUT             = xml
+RECURSIVE              = YES
+
+# 输入
+INPUT                  = source README.md
+FILE_PATTERNS          = *.f90 *.F90 *.md
+EXTENSION_MAPPING      = f90=Fortran
+OPTIMIZE_FOR_FORTRAN   = YES
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
+EXTRACT_STATIC         = YES
+SOURCE_BROWSER         = YES
+INLINE_SOURCES         = YES
+
+# 注释样式与外观
+JAVADOC_AUTOBRIEF      = YES
+WARN_IF_UNDOCUMENTED   = NO
+WARN_IF_DOC_ERROR      = YES
+GENERATE_TREEVIEW      = YES
+MARKDOWN_SUPPORT     = YES
+USE_MATHJAX          = YES
+HAVE_DOT	     = YES
