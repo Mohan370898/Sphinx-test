@@ -4,6 +4,9 @@ build:
     # python: "mambaforge-latest"
     # python: "3.11"
     python: "3.11"
+  apt-packages:
+    - doxygen
+    - graphviz
 
 sphinx:
   configuration: source/conf.py
