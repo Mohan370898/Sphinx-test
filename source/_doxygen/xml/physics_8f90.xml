@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="physics_8f90" kind="file" language="Fortran">
+    <compoundname>physics.f90</compoundname>
+    <innernamespace refid="namespacephysics">physics</innernamespace>
+    <briefdescription>
+<para>库仑力与常数定义。 </para>
+    </briefdescription>
+    <detaileddescription>
+<para>使用国际单位制：  <formula id="0">\[
+   \mathbf{F}_{12} = k_e \frac{q_1 q_2}{\|\mathbf{r}\|^3}\,\mathbf{r},\quad
+   \mathbf{r} = \mathbf{x}_2 - \mathbf{x}_1,\quad
+   k_e = \frac{1}{4\pi\varepsilon_0}
+ \]</formula></para>
+<para>示例： <programlisting><codeline><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">kinds,<sp/><sp/><sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/>dp</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">vector3,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/>vec3</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal"><ref refid="namespacephysics" kindref="compound">physics</ref>,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/><ref refid="namespacephysics_1a8471f5aa31ae8dc7f1fe597ad23e9404" kindref="member">coulomb_force</ref></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(vec3)<sp/>::<sp/>x1,<sp/>x2,<sp/>F</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">real</highlight><highlight class="normal">(dp)<sp/><sp/><sp/>::<sp/>q1,<sp/>q2</highlight></codeline>
+<codeline><highlight class="normal">x1<sp/>=<sp/>vec3(0._dp,<sp/>0._dp,<sp/>0._dp)</highlight></codeline>
+<codeline><highlight class="normal">x2<sp/>=<sp/>vec3(0._dp,<sp/>0._dp,<sp/>1._dp)</highlight></codeline>
+<codeline><highlight class="normal">q1<sp/>=<sp/>1.0e-6_dp;<sp/>q2<sp/>=<sp/>2.0e-6_dp<sp/></highlight><highlight class="comment">!<sp/>库仑</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">f<sp/>=<sp/><ref refid="namespacephysics_1a8471f5aa31ae8dc7f1fe597ad23e9404" kindref="member">coulomb_force</ref>(x1,<sp/>q1,<sp/>x2,<sp/>q2)</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="see"><para>vector3::vec3 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="26" refid="namespacephysics" refkind="compound"><highlight class="keyword">module</highlight><highlight class="normal"><sp/><ref refid="namespacephysics" kindref="compound">physics</ref></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">kinds,<sp/><sp/><sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/>dp</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">use<sp/></highlight><highlight class="normal">vector3,<sp/></highlight><highlight class="keywordtype">only</highlight><highlight class="normal">:<sp/>vec3,<sp/>minus,<sp/>norm,<sp/>scale</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">implicit<sp/>none</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">private</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">public</highlight><highlight class="normal"><sp/>::<sp/><ref refid="namespacephysics_1a3fec9d633bbaecc667172d56a3b1809f" kindref="member">eps0</ref>,<sp/><ref refid="namespacephysics_1a4b44258a3c171866e5e3f20beb489c6f" kindref="member">ke</ref>,<sp/><ref refid="namespacephysics_1a8471f5aa31ae8dc7f1fe597ad23e9404" kindref="member">coulomb_force</ref></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="namespacephysics_1a3fec9d633bbaecc667172d56a3b1809f" refkind="member"><highlight class="keywordtype"><sp/><sp/>real</highlight><highlight class="normal">(dp),<sp/></highlight><highlight class="keywordtype">parameter</highlight><highlight class="normal"><sp/>::<sp/><ref refid="namespacephysics_1a3fec9d633bbaecc667172d56a3b1809f" kindref="member">eps0</ref><sp/>=<sp/>8.854187817e-12_dp</highlight></codeline>
+<codeline lineno="36" refid="namespacephysics_1a4b44258a3c171866e5e3f20beb489c6f" refkind="member"><highlight class="keywordtype"><sp/><sp/>real</highlight><highlight class="normal">(dp),<sp/></highlight><highlight class="keywordtype">parameter</highlight><highlight class="normal"><sp/>::<sp/><ref refid="namespacephysics_1a4b44258a3c171866e5e3f20beb489c6f" kindref="member">ke</ref><sp/><sp/><sp/>=<sp/>1.0_dp/(4.0_dp*acos(-1.0_dp)*<ref refid="namespacephysics_1a3fec9d633bbaecc667172d56a3b1809f" kindref="member">eps0</ref>)</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">contains</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="namespacephysics_1a8471f5aa31ae8dc7f1fe597ad23e9404" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">pure</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">function<sp/></highlight><highlight class="normal"><ref refid="namespacephysics_1a8471f5aa31ae8dc7f1fe597ad23e9404" kindref="member">coulomb_force</ref>(x1,<sp/>q1,<sp/>x2,<sp/>q2)<sp/></highlight><highlight class="keyword">result</highlight><highlight class="normal">(F12)</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(vec3),<sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>x1,<sp/>x2</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="keywordtype"><sp/><sp/><sp/><sp/>real</highlight><highlight class="normal">(dp),<sp/><sp/><sp/></highlight><highlight class="keywordtype">intent(in)</highlight><highlight class="normal"><sp/>::<sp/>q1,<sp/>q2</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(vec3)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>f12</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">type</highlight><highlight class="normal">(vec3)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>r</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="keywordtype"><sp/><sp/><sp/><sp/>real</highlight><highlight class="normal">(dp)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>d,<sp/>d3,<sp/>qprod,<sp/>dmin</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>r<sp/><sp/><sp/><sp/><sp/>=<sp/>minus(x2,<sp/>x1)</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>[force_core]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>d<sp/><sp/><sp/><sp/><sp/>=<sp/>norm(r)</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>dmin<sp/><sp/>=<sp/>1.0e-12_dp<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!!&lt;<sp/>最小距离钳制（m）</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(d<sp/>&lt;<sp/>dmin)<sp/>d<sp/>=<sp/>dmin</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>d3<sp/><sp/><sp/><sp/>=<sp/>d*d*d</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>qprod<sp/>=<sp/>q1*q2</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">!<sp/>[force_core]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>f12<sp/>=<sp/>scale(<ref refid="namespacephysics_1a4b44258a3c171866e5e3f20beb489c6f" kindref="member">ke</ref>*qprod/d3,<sp/>r)</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">end<sp/>function<sp/></highlight><highlight class="normal"><ref refid="namespacephysics_1a8471f5aa31ae8dc7f1fe597ad23e9404" kindref="member">coulomb_force</ref></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="keyword">end<sp/>module<sp/></highlight><highlight class="normal">physics</highlight></codeline>
+    </programlisting>
+    <location file="physics.f90"/>
+  </compounddef>
+</doxygen>

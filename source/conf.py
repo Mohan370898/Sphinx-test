@@ -26,7 +26,7 @@ extensions = [
     "sphinx.ext.graphviz"
     ]
 
-breathe_projects = {"Sphinx test": os.path.join("source/_doxygen", "xml")}
+breathe_projects = {"Sphinx test": os.path.join("_doxygen", "xml")}
 breathe_default_project = "Sphinx test"
 
 templates_path = ['_templates']

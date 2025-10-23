@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.9.8" xml:lang="en-US">
+  <compound refid="namespacephysics" kind="namespace"><name>physics</name>
+    <member refid="namespacephysics_1a3fec9d633bbaecc667172d56a3b1809f" kind="variable"><name>eps0</name></member>
+    <member refid="namespacephysics_1a4b44258a3c171866e5e3f20beb489c6f" kind="variable"><name>ke</name></member>
+    <member refid="namespacephysics_1a8471f5aa31ae8dc7f1fe597ad23e9404" kind="function"><name>coulomb_force</name></member>
+  </compound>
+  <compound refid="physics_8f90" kind="file"><name>physics.f90</name>
+  </compound>
+</doxygenindex>

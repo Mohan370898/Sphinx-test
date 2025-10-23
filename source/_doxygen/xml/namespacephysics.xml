@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="namespacephysics" kind="namespace" language="Fortran">
+    <compoundname>physics</compoundname>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacephysics_1a3fec9d633bbaecc667172d56a3b1809f" prot="public" static="no" mutable="no">
+        <type>real(dp), parameter, public</type>
+        <definition>real(dp), parameter, public physics::eps0</definition>
+        <argsstring></argsstring>
+        <name>eps0</name>
+        <qualifiedname>physics::eps0</qualifiedname>
+        <initializer>= 8.854187817e-12_dp</initializer>
+        <briefdescription>
+<para>真空介电常数 <formula id="1">$\varepsilon_0$</formula> [F/m] </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="physics.f90" line="34" column="1" bodyfile="physics.f90" bodystart="34" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacephysics_1a4b44258a3c171866e5e3f20beb489c6f" prot="public" static="no" mutable="no">
+        <type>real(dp), parameter, public</type>
+        <definition>real(dp), parameter, public physics::ke</definition>
+        <argsstring></argsstring>
+        <name>ke</name>
+        <qualifiedname>physics::ke</qualifiedname>
+        <initializer>= 1.0_dp/(4.0_dp*acos(-1.0_dp)*<ref refid="namespacephysics_1a3fec9d633bbaecc667172d56a3b1809f" kindref="member">eps0</ref>)</initializer>
+        <briefdescription>
+<para>库仑常数 <formula id="2">$k_e=1/(4\pi\varepsilon_0)$</formula> [N·m²/C²] </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="physics.f90" line="36" column="1" bodyfile="physics.f90" bodystart="36" bodyend="36"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespacephysics_1a8471f5aa31ae8dc7f1fe597ad23e9404" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pure type(vec3) function, public</type>
+        <definition>pure type(vec3) function, public physics::coulomb_force</definition>
+        <argsstring>(x1, q1, x2, q2)</argsstring>
+        <name>coulomb_force</name>
+        <qualifiedname>physics::coulomb_force</qualifiedname>
+        <param>
+          <type>type(vec3), intent(in)</type>
+          <defname>x1</defname>
+        </param>
+        <param>
+          <type>real(dp), intent(in)</type>
+          <defname>q1</defname>
+        </param>
+        <param>
+          <type>type(vec3), intent(in)</type>
+          <defname>x2</defname>
+        </param>
+        <param>
+          <type>real(dp), intent(in)</type>
+          <defname>q2</defname>
+        </param>
+        <briefdescription>
+<para>计算两点电荷间的库仑力（作用在粒子1上）。 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">x1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>粒子1位置 <formula id="3">$\mathbf{x}_1$</formula> [m] </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">q1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>粒子1电荷 <formula id="4">$q_1$</formula> [C] </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">x2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>粒子2位置 <formula id="5">$\mathbf{x}_2$</formula> [m] </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">q2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>粒子2电荷 <formula id="6">$q_2$</formula> [C] </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><formula id="7">$\mathbf{F}_{12}$</formula> 作用于粒子1的力 [N]</para>
+</simplesect>
+<simplesect kind="warning"><para>当两粒子位置重合时，力理论上发散。此处做了最小距离钳制以避免数值发散（仅用于示例）。 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="physics.f90" line="49" column="1" bodyfile="physics.f90" bodystart="50" bodyend="65"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="physics.f90" line="26" column="1"/>
+  </compounddef>
+</doxygen>

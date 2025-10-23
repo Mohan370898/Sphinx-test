@@ -1,6 +1,6 @@
 # 基本
 PROJECT_NAME           = "Fortran Coulomb Force (Doxygen Demo)"
-OUTPUT_DIRECTORY       = source/_doxygen
+OUTPUT_DIRECTORY       = _doxygen
 GENERATE_HTML          = NO
 GENERATE_LATEX         = NO
 GENERATE_XML           = YES
@@ -8,7 +8,7 @@ XML_OUTPUT             = xml
 RECURSIVE              = YES
 
 # 输入
-INPUT                  = source README.md
+INPUT                  = . README.md
 FILE_PATTERNS          = *.f90 *.F90 *.md
 EXTENSION_MAPPING      = f90=Fortran
 OPTIMIZE_FOR_FORTRAN   = YES
