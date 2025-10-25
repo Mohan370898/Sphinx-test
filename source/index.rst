@@ -217,8 +217,11 @@ Doxygen是命令行工具，Sphinx和Breathe是Python的包。在PMSL程序说�
       sphinx-quickstart on Thu Oct 23 11:27:58 2025.
       You can adapt this file completely to your liking, but it should at least
       contain the root `toctree` directive.
+
+   ===================================
    Sphinx 演示
    ===================================
+
    .. toctree::
       :maxdepth: 2
       :caption: Contents:
@@ -230,21 +233,25 @@ Doxygen是命令行工具，Sphinx和Breathe是Python的包。在PMSL程序说�
       :maxdepth: 2
       :caption: Contents:
 
+   ------------------------------
    physics.f90 说明
-   ----------
+   ------------------------------
 
    .. doxygenfile:: physics.f90
       :project: Sphinx test
       :sections: briefdescription detaileddescription program
 
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    coulomb_force function说明
-   ~~~~~~~~~~~~~~~~~~
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
    .. doxygenfunction:: coulomb_force
       :project: Sphinx test
 
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    physics namespace 说明
-   ~~~~~~~~~~~~~~~~~~~~
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   
    .. doxygennamespace:: physics
       :project: Sphinx test
       :members:
