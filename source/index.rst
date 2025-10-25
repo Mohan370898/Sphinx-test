@@ -59,6 +59,7 @@ Doxygen->Breathe->Sphinx 网页说明文档生成
 Doxygen是命令行工具，Sphinx和Breathe是Python的包。在PMSL程序说明文档的开发中，Doxygen将利用源代码中的程序生成接口说明（xml文件），Breathe可以连接Doxygen的xml文件到Sphinx的rst语法中，Sphinx将对使用rst语法或markdown语法的文档进行编译，生成对应的html文档。
 
 **Q**：为什么不直接使用Doxygen自动生成的文档
+
 **A**：Doxygen是更偏向于撰写API接口的工具，相比于源代码内部，更关注程序的输入和输出参数。但是对于PMSL的程序，需要对代码的逻辑、过程进行详细说明
 
 ----------------------------------------------
@@ -66,8 +67,6 @@ Doxygen是命令行工具，Sphinx和Breathe是Python的包。在PMSL程序说�
 ----------------------------------------------
 
 .. code-block:: bash
-
-   :linenos
 
    .
    ├── Makefile                       # Linux/macOS 一键构建入口
@@ -88,8 +87,6 @@ Doxygen是命令行工具，Sphinx和Breathe是Python的包。在PMSL程序说�
 **环境安装**
 .. code-block:: bash
 
-   :linenos
-
    # 必需
    pip install sphinx
    pip install graphviz
@@ -103,8 +100,6 @@ Doxygen是命令行工具，Sphinx和Breathe是Python的包。在PMSL程序说�
 **环境搭建**
 
 .. code-block:: bash
-   
-   :linenos
 
    sphinx-quickstart
 
@@ -113,8 +108,6 @@ Doxygen是命令行工具，Sphinx和Breathe是Python的包。在PMSL程序说�
 **网页构建**
 
 .. code-block:: bash
-
-   :linenos
 
    doxygen source/Doxyfile
    make html
@@ -126,8 +119,6 @@ Doxygen是命令行工具，Sphinx和Breathe是Python的包。在PMSL程序说�
 **Doxyfile**
 
 .. code-block:: Makefile
-
-   :linenos
 
    # 基本
    PROJECT_NAME           = "Fortran Coulomb Force (Doxygen Demo)"
@@ -161,8 +152,6 @@ Doxygen是命令行工具，Sphinx和Breathe是Python的包。在PMSL程序说�
 **conf.py**
 
 .. code-block:: python
-
-   :linenos
 
    # Configuration file for the Sphinx documentation builder.
    #
@@ -214,8 +203,6 @@ Doxygen是命令行工具，Sphinx和Breathe是Python的包。在PMSL程序说�
 
 .. code-block:: yaml
 
-   :linenos
-
    build:
   os: ubuntu-24.04
   tools:
@@ -234,8 +221,6 @@ python:
 **index.rst**（主页源文件）
 
 .. code-blockl:: rst
-
-   :linenos
 
    .. Sphinx Test documentation master file, created by
       sphinx-quickstart on Thu Oct 23 11:27:58 2025.
@@ -303,8 +288,6 @@ physics.f90 说明
 这里通过使用``Breathe``引用了``Doxygen``产生的``.xml``文件，来对``physics.f90``文件进行说明。即：
 
 .. code-block:: rst
-   
-   :linenos
 
    .. doxygenfile:: physics.f90
       :project: Sphinx test
