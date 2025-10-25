@@ -67,7 +67,7 @@ Doxygen是命令行工具，Sphinx和Breathe是Python的包。在PMSL程序说�
 
 .. code-block:: bash
 
-   :linenos:
+   :linenos
 
    .
    ├── Makefile                       # Linux/macOS 一键构建入口
@@ -88,7 +88,7 @@ Doxygen是命令行工具，Sphinx和Breathe是Python的包。在PMSL程序说�
 **环境安装**
 .. code-block:: bash
 
-   :linenos:
+   :linenos
 
    # 必需
    pip install sphinx
@@ -104,7 +104,7 @@ Doxygen是命令行工具，Sphinx和Breathe是Python的包。在PMSL程序说�
 
 .. code-block:: bash
    
-   :linenos:
+   :linenos
 
    sphinx-quickstart
 
@@ -114,7 +114,7 @@ Doxygen是命令行工具，Sphinx和Breathe是Python的包。在PMSL程序说�
 
 .. code-block:: bash
 
-   :linenos:
+   :linenos
 
    doxygen source/Doxyfile
    make html
@@ -127,7 +127,7 @@ Doxygen是命令行工具，Sphinx和Breathe是Python的包。在PMSL程序说�
 
 .. code-block:: Makefile
 
-   :linenos:
+   :linenos
 
    # 基本
    PROJECT_NAME           = "Fortran Coulomb Force (Doxygen Demo)"
@@ -162,7 +162,7 @@ Doxygen是命令行工具，Sphinx和Breathe是Python的包。在PMSL程序说�
 
 .. code-block:: python
 
-   :linenos:
+   :linenos
 
    # Configuration file for the Sphinx documentation builder.
    #
@@ -214,7 +214,7 @@ Doxygen是命令行工具，Sphinx和Breathe是Python的包。在PMSL程序说�
 
 .. code-block:: yaml
 
-   :linenos:
+   :linenos
 
    build:
   os: ubuntu-24.04
@@ -235,7 +235,7 @@ python:
 
 .. code-blockl:: rst
 
-   :linenos:
+   :linenos
 
    .. Sphinx Test documentation master file, created by
       sphinx-quickstart on Thu Oct 23 11:27:58 2025.
@@ -304,7 +304,7 @@ physics.f90 说明
 
 .. code-block:: rst
    
-   :linenos:
+   :linenos
 
    .. doxygenfile:: physics.f90
       :project: Sphinx test
