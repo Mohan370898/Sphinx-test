@@ -208,7 +208,7 @@ Doxygen是命令行工具，Sphinx和Breathe是Python的包。在PMSL程序说�
       - requirements: requirements.txt
 
 
-**index.rst**（主页源文件）
+**index.rst（主页源文件）**
 
 
 .. code-block:: rst
