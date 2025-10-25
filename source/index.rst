@@ -85,6 +85,7 @@ Doxygen是命令行工具，Sphinx和Breathe是Python的包。在PMSL程序说�
 ----------------------------------------------
 
 **环境安装**
+
 .. code-block:: bash
 
    # 必需
@@ -157,22 +158,16 @@ Doxygen是命令行工具，Sphinx和Breathe是Python的包。在PMSL程序说�
    #
    # For the full list of built-in configuration values, see the documentation:
    # https://www.sphinx-doc.org/en/master/usage/configuration.html
-
    # -- Project information -----------------------------------------------------
    # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
-
    import os,subprocess
-
    project = 'Sphinx Test'
    copyright = '2025, Zhe Liu'
    author = 'Zhe Liu'
-
    # -- General configuration ---------------------------------------------------
    # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
-
    HERE = os.path.dirname(__file__)
    subprocess.run(["doxygen", os.path.join(HERE, "Doxyfile")], check=True)
-
    extensions = [
       "sphinx_rtd_theme",
       "breathe",
@@ -180,26 +175,20 @@ Doxygen是命令行工具，Sphinx和Breathe是Python的包。在PMSL程序说�
       "sphinxcontrib.katex",
       "sphinx.ext.graphviz"
       ]
-
    breathe_projects = {"Sphinx test": os.path.join("_doxygen", "xml")}
    breathe_default_project = "Sphinx test"
-
    templates_path = ['_templates']
    exclude_patterns = ["sphinx_rtd_theme"]
-
    ketex_prerender = True
-
-
-
    # -- Options for HTML output -------------------------------------------------
    # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
-
    html_theme = "sphinx_rtd_theme"
    html_static_path = ['_static']
-
    breathe_default_members = ()
 
 **.readthedocs.yaml**
+
+
 
 .. code-block:: yaml
 
@@ -211,25 +200,25 @@ Doxygen是命令行工具，Sphinx和Breathe是Python的包。在PMSL程序说�
     - doxygen
     - graphviz
 
-sphinx:
+   sphinx:
   configuration: source/conf.py
 
-python:
-  install:
-  - requirements: requirements.txt
+   python:
+      install:
+      - requirements: requirements.txt
+
 
 **index.rst**（主页源文件）
 
-.. code-blockl:: rst
+
+.. code-block:: rst
 
    .. Sphinx Test documentation master file, created by
       sphinx-quickstart on Thu Oct 23 11:27:58 2025.
       You can adapt this file completely to your liking, but it should at least
       contain the root `toctree` directive.
-
    Sphinx 演示
    ===================================
-
    .. toctree::
       :maxdepth: 2
       :caption: Contents:
@@ -260,12 +249,6 @@ python:
       :project: Sphinx test
       :members:
 
-   004 pusher
-   ==============
-
-
-   005 pusher2
-   ==========
 
 ====================================================
 readthedocs （网页host平台）
